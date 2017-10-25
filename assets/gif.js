@@ -42,7 +42,7 @@ $(document).ready(function(){
 		function displayGif() {
 
 	        var gif = $(this).attr("data-name");
-	        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=lEE9ixtvQADuyaDtEW3pRzc1ycGKV8Vd&limit=10";
+	        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=lEE9ixtvQADuyaDtEW3pRzc1ycGKV8Vd&limit=10";
 
 	        $.ajax({
 	          url: queryURL,
@@ -54,7 +54,7 @@ $(document).ready(function(){
 	        	for (var i = 0; i < response.data.length; i++) {
 
 	        		var image = $("<img>")
-	        		image.addClass("col-md-6")
+	        		image.addClass("col-xs-6")
 	        		image.attr("src", response.data[i].images.fixed_height_still.url)
 	        		image.attr("data-still", response.data[i].images.fixed_height_still.url)
 	        		image.attr("data-animate", response.data[i].images.fixed_height.url)
